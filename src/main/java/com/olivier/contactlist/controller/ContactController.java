@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class ContactController {
@@ -22,7 +21,7 @@ public class ContactController {
 
     @GetMapping(value = {"/", "/home"})
     public String showHomePage(Model model) {
-        model.addAttribute("contacts", contactService.getAllContact());
+        model.addAttribute("contacts", contactService.getAllContacts());
         model.addAttribute("count", contactService.countContacts());
         return "home-page";
     }
@@ -44,7 +43,7 @@ public class ContactController {
             return "create-page";
         } else {
             contactService.saveContact(contact);
-            model.addAttribute("contacts", contactService.getAllContact());
+            model.addAttribute("contacts", contactService.getAllContacts());
             return "home-page";
         }
 
@@ -61,7 +60,7 @@ public class ContactController {
             contactService.deleteContact(id);
         }
 
-        model.addAttribute("contacts", contactService.getAllContact());
+        model.addAttribute("contacts", contactService.getAllContacts());
         return "home-page";
     }
 
@@ -72,7 +71,7 @@ public class ContactController {
 
         if (!errorList.isEmpty()) {
             model.addAttribute("errorList", errorList);
-            model.addAttribute("contacts", contactService.getAllContact());
+            model.addAttribute("contacts", contactService.getAllContacts());
             return "home-page";
         } else {
             Contact contact = contactService.getContactById(id).orElse(null);
@@ -92,7 +91,7 @@ public class ContactController {
             return "update-page";
         } else {
             contactService.saveContact(contact);
-            model.addAttribute("contacts", contactService.getAllContact());
+            model.addAttribute("contacts", contactService.getAllContacts());
             return "home-page";
         }
 

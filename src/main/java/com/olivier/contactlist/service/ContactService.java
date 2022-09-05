@@ -28,7 +28,7 @@ public class ContactService {
         return contactRepository.findById(id).isPresent();
     }
 
-    public List<Contact> getAllContact() {
+    public List<Contact> getAllContacts() {
         return (List) contactRepository.findAll();
     }
 
