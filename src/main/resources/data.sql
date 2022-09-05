@@ -6,6 +6,6 @@ CREATE TABLE contacts (
   email VARCHAR(250) NOT NULL
 );
 INSERT INTO contacts (first_name, last_name, email) VALUES
-  ('Laurent', 'GINA', 'laurentgina@mail.com'),
-  ('Sophie', 'FONCEK', 'sophiefoncek@mail.com'),
-  ('Agathe', 'FEELING', 'agathefeeling@mail.com');
+  ('Laurent', 'AAA', 'laurent@mail.com'),
+  ('Mickael', 'BBB', 'micka@mail.com'),
+  ('David', 'CCC', 'david@mail.com');
