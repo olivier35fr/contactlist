@@ -32,7 +32,7 @@ public class ContactService {
         return (List) contactRepository.findAll();
     }
 
-    public long countContacts() {
+    public Long countContacts() {
         return contactRepository.count();
     }
 
